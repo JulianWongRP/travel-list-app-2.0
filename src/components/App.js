@@ -15,8 +15,13 @@ const initialItems = [
 
 function App() {
   const [items, setItems] = useState(initialItems);
+  const maxItems = 10;
 
   function handleAddItems(item) {
+    if (items.length >= maxItems) {
+      alert(`You can only add up to ${maxItems} items.`);
+      return; // Prevent adding more items
+    }
     setItems((prevItems) => [...prevItems, item]);
   }
 
@@ -36,7 +41,7 @@ function App() {
   function handleClearAll(){
     setItems([])
   }
-  
+
   
   return (
     <div className="app">

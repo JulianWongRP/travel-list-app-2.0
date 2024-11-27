@@ -34,6 +34,7 @@ export default function Form({handleAddItems}) {
     function handleDropdown(e){
       setQuantity(Number(e.target.value));
     }
+    
   
   
     return (
