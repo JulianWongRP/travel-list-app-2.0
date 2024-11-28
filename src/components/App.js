@@ -41,6 +41,12 @@ function App() {
   function handleClearAll(){
     setItems([])
   }
+  
+  function handleUpdateAll(shouldPackAll) {
+    setItems((prevItems) =>
+      prevItems.map((item) => ({ ...item, packed: shouldPackAll }))
+    );
+  }
 
   
   return (
@@ -48,7 +54,7 @@ function App() {
       <Logo />
       <Form  handleAddItems={handleAddItems}/>
       <PackingList  Items={items} handleDeleteItem={handleDeleteItem} handleUpdateItem={handleUpdateItem}/>
-      <Stats  Items={items} handleClearAll={handleClearAll}/>
+      <Stats  Items={items} handleClearAll={handleClearAll} handleUpdateAll={handleUpdateAll}/>
     </div>
   );
 }
