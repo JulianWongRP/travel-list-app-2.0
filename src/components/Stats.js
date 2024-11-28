@@ -12,7 +12,7 @@ export default function Stats({ Items , handleClearAll, handleUpdateAll}) {
           {length === packed ? `You got everything!` : `You have ${length} items in the list. You already packed ${packed}(${percentage.toFixed(2)}%)`}
         </em>
         <button onClick={() => handleClearAll()}>Clear All</button>
-        <button onClick={() => handleUpdateAll(true)}>Pack All</button>
+        <button onClick={() => handleUpdateAll(true)} style={{backgroundColor: "pink"}}>Pack All</button>
       </footer>
     );
   }
